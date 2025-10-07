@@ -4,5 +4,6 @@ import { EnvModule } from './env/env.module.js';
 
 @Module({
   imports: [ConfigModule.forRoot({ isGlobal: true }), EnvModule],
+  providers: [],
 })
 export class AppModule {}
