@@ -1,10 +1,16 @@
 {
   "name": "sprint-manager",
+  "private": true,
   "version": "1.0.0",
   "description": "**Name:** Sprintly (placeholder)",
   "main": "index.js",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "build": "npm run build -ws",
+    "dev": "npm run dev -ws"
   },
   "repository": {
     "type": "git",
@@ -17,5 +23,8 @@
   "bugs": {
     "url": "https://github.com/CamelJohn/sprint-manager/issues"
   },
-  "homepage": "https://github.com/CamelJohn/sprint-manager#readme"
+  "homepage": "https://github.com/CamelJohn/sprint-manager#readme",
+  "devDependencies": {
+    "turbo": "^2.5.8"
+  }
 }
