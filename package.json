@@ -6,11 +6,13 @@
   "main": "index.js",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/*",
+    "prisma/*"
   ],
   "scripts": {
-    "build": "npm run build -ws",
-    "dev": "npm run dev -ws"
+   "dev": "turbo run dev",
+   "build": "turbo run build",
+   "lint": "turbo run lint"
   },
   "repository": {
     "type": "git",
