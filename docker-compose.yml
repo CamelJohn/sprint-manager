@@ -1,0 +1,35 @@
+services:
+  db:
+    image: postgres:17
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+      POSTGRES_DB: sprintly_dev
+    volumes:
+      - db-data:/var/lib/postgresql/data
+    ports:
+      - '5432:5432'
+
+  redis:
+    image: redis:7
+    ports:
+      - '6379:6379'
+
+  backend:
+    build: ./apps/backend
+    command: npm run dev
+    volumes:
+      - ./apps/backend:/usr/src/app
+      - /usr/src/app/node_modules
+    environment:
+      DATABASE_URL: postgres://postgres:postgres@db:5432/sprintly_dev
+      REDIS_URL: redis://redis:6379
+      JWT_SECRET: supersecret
+    ports:
+      - '3000:3000'
+    depends_on:
+      - db
+      - redis
+
+volumes:
+  db-data:

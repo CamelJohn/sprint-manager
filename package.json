@@ -10,9 +10,9 @@
     "prisma/*"
   ],
   "scripts": {
-   "dev": "turbo run dev",
-   "build": "turbo run build",
-   "lint": "turbo run lint"
+    "dev": "turbo run dev",
+    "build": "turbo run build",
+    "lint": "turbo run lint"
   },
   "repository": {
     "type": "git",
@@ -28,5 +28,6 @@
   "homepage": "https://github.com/CamelJohn/sprint-manager#readme",
   "devDependencies": {
     "turbo": "^2.5.8"
-  }
+  },
+  "packageManager": "npm@11.6.0"
 }
