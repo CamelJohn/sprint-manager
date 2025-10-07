@@ -140,3 +140,9 @@ vite.config.ts.timestamp-*
 
 # turbo
 .turbo
+
+# prisma
+/packages/db/src/generated/
+/packages/db/src/generated/**
+/packages/db/prisma/migrations/
+/packages/db/prisma/migrations/**
