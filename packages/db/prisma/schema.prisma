@@ -42,4 +42,23 @@ model Project {
   updatedAt      DateTime     @updatedAt
   organization   Organization @relation(fields: [organizationId], references: [id])
   organizationId String
+  Sprint         Sprint[]
+}
+
+enum SprintStatus {
+  PLANNING
+  ACTIVE
+  CLOSED
+}
+
+model Sprint {
+  id        String       @id @default(uuid())
+  name      String
+  status    SprintStatus @default(PLANNING)
+  startDate DateTime?
+  endDate   DateTime?
+  createdAt DateTime     @default(now())
+  updatedAt DateTime     @updatedAt
+  project   Project      @relation(fields: [projectId], references: [id])
+  projectId String
 }
