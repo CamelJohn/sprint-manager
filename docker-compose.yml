@@ -16,17 +16,21 @@ services:
       - '6379:6379'
 
   backend:
-    build: ./apps/backend
-    command: npm run dev
+    build:
+      context: .
+      dockerfile: apps/backend/Dockerfile
+    working_dir: /usr/src/app/apps/backend
     volumes:
-      - ./apps/backend:/usr/src/app
-      - /usr/src/app/node_modules
+      - ./apps/backend:/usr/src/app/apps/backend
+      # Let container handle node_modules to preserve workspace symlinks
+      - /usr/src/app/apps/backend/node_modules
     environment:
       DATABASE_URL: postgres://postgres:postgres@db:5432/sprintly_dev
       REDIS_URL: redis://redis:6379
       JWT_SECRET: supersecret
     ports:
       - '3000:3000'
+    command: sh -c "npm install && npm run dev"
     depends_on:
       - db
       - redis
