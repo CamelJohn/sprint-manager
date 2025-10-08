@@ -5,9 +5,10 @@ import { EnvModule } from './env/env.module.js';
 import { UsersModule } from './modules/users/users.module.js';
 
 import { PrismaService } from './prisma/prisma.service.js';
+import { ProjectsModule } from './modules/projects/projects.module.js';
 
 @Module({
-  imports: [ConfigModule.forRoot({ isGlobal: true }), EnvModule, UsersModule],
+  imports: [ConfigModule.forRoot({ isGlobal: true }), EnvModule, UsersModule, ProjectsModule],
   providers: [PrismaService],
 })
 export class AppModule {}
