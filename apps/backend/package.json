@@ -7,7 +7,7 @@
     "dev": "tsx watch src/main.ts",
     "build": "tsc",
     "start": "node dist/main.js",
-    "generate": "nest g"
+    "generate": "nest g --"
   },
   "keywords": [],
   "author": "",
