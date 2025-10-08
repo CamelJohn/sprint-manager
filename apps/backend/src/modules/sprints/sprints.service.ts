@@ -1,6 +1,6 @@
 import { Injectable } from '@nestjs/common';
 import { PrismaService } from '../../prisma/prisma.service.js';
-import { SprintStatus, type Sprint } from '@sprint-manager/db/generated/client/index.js';
+import { type Sprint } from '@sprint-manager/db/generated/client/index.js';
 import type { CreateSprintDto } from './dto/create-sprint.dto.js';
 import type { UpdateSprintDto } from './dto/update-sprint.dto.js';
 
