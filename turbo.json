@@ -8,6 +8,15 @@
     "dev": {
       "cache": false
     },
-    "lint": {}
+    "lint": {},
+    "migrate:dev": {
+      "outputs": []
+    },
+    "migrate:deploy": {
+      "outputs": []
+    },
+    "generate": {
+      "outputs": []
+    }
   }
 }
